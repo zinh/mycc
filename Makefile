@@ -1,9 +1,9 @@
 myc: main.cc
-	clang++ main.cc -o myc
+	clang++ -std=c++11 main.cc -o myc
 
 test: myc
 	./test.sh
 clean:
-	rm *.s myc tmp
+	rm -rf *.s myc tmp *.out *.dSYM
 
-.PHONY: clean
+.PHONY: clean test
